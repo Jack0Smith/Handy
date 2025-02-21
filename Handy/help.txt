@@ -1,0 +1,6 @@
+### IMPORTANT NOTES ###
+- requirements.txt:
+	This file will contain any modules/libraries we add to python. Like this:
+		""" math
+		    time
+     		    transformers """
