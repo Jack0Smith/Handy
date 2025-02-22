@@ -1,3 +1,15 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:cfe64b74ab6bfc137efc1eb4c71814b0682a7778e64ea09bfe01f712ee37debe
-size 497
+from flask import Flask, request, jsonify
+from flask_cors import CORS
+
+app = Flask(__name__)
+CORS(app)
+
+@app.route('/submit', methods=['POST'])
+def submit_text():
+    data = request.json  # Get JSON data from request
+    text = data.get("finalText")  # Extract text field content
+    print("Received text:", text)  # Print in Flask console
+    return jsonify({"message": "Text received!", "received_text": text})  # Send response
+
+if __name__ == '__main__':
+    app.run(debug=True)
